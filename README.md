@@ -13,6 +13,16 @@ Build an assistant in Open WebUI that answers two kinds of questions:
 
 This demonstrates **static RAG** (uploaded CSV) vs **dynamic tool use** (live API at query time).
 
+## Homework requirement mapping
+
+| Assignment requirement | Implementation |
+|------------------------|----------------|
+| 1. Knowledge Base in Open WebUI | `cwurData.csv` uploaded as **World University Rankings Knowledge Base** |
+| 2. Local Python server | `tools_server.py` on `http://localhost:5005` |
+| 3. Server endpoints call external APIs | `/country-info` calls **RapidAPI** (REST Countries v1); fallback only if RapidAPI is unavailable |
+| 4. Web UI Tool calls local server | `openwebui_tool.py` → `http://host.docker.internal:5005/country-info` |
+| 5. KB for dataset questions; Tool for live questions | Docstrings + README examples separate rankings vs country facts |
+
 ## Architecture
 
 ```
@@ -141,19 +151,22 @@ Or: `python test_local_server.py`
 
 ## Screenshots for submission
 
-Save in `screenshots/` with these exact names:
+Final submission includes **four screenshots** in `screenshots/`:
 
 | File | Content |
 |------|---------|
-| `01_knowledge_base_uploaded.png` | Knowledge page, `cwurData.csv` indexed |
 | `02_country_info_tool_created.png` | Workspace → Tools, Country Info Tool |
 | `03_knowledge_base_chat_csv_source.png` | Chat with retrieved source / `cwurData.csv` |
 | `04_country_tool_chat_japan_tokyo.png` | Tool call + Japan capital = Tokyo |
-| `05_terminal_health_ok.png` | `curl.exe .../health` → status ok |
-| `06_terminal_country_info_japan_ok.png` | `curl.exe .../country-info?country=Japan` → 200 |
-| `07_tools_server_running.png` | *(optional)* Server on port 5005 |
+| `05_terminal_health_ok.png` | `curl.exe http://localhost:5005/health` → status ok |
 
-See `screenshots/SCREENSHOTS_TODO.md` if any files are still missing.
+Optional screenshots (`01`, `06`, `07`) were skipped intentionally — see `screenshots/SCREENSHOTS_TODO.md`.
+
+## Security
+
+- Copy `.env.example` to `.env` locally and add your RapidAPI key.
+- **Never commit `.env` or real API keys.**
+- `.env` is listed in `.gitignore`.
 
 ## Verified completion
 
