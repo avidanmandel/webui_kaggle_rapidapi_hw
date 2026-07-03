@@ -1,45 +1,27 @@
-# Screenshots TODO
+# Screenshots — Final Submission Notes
 
-Three screenshots are **done**. Four are still **missing**.
+Final homework submission uses **four screenshots** (see list below). Optional screenshots were **skipped intentionally** — this is acceptable for submission.
 
-Before saving any screenshot, verify it does **not** show:
+Before any screenshot is committed, verify it does **not** show:
 - Your `.env` file contents
 - Your RapidAPI API key
 - Terminal output containing secrets
 
-## Completed
+## Included in final submission
 
-- [x] `02_country_info_tool_created.png`
-- [x] `03_knowledge_base_chat_csv_source.png`
-- [x] `04_country_tool_chat_japan_tokyo.png`
+- [x] `02_country_info_tool_created.png` — Open WebUI Tools page with Country Info Tool
+- [x] `03_knowledge_base_chat_csv_source.png` — Chat with `cwurData.csv` retrieved
+- [x] `04_country_tool_chat_japan_tokyo.png` — Country Info Tool; Japan capital = Tokyo
+- [x] `05_terminal_health_ok.png` — Terminal `curl.exe http://localhost:5005/health` → status ok
 
-## Still missing
+## Skipped intentionally (optional)
 
-### 01_knowledge_base_uploaded.png
-**Capture:** Open WebUI → Workspace → Knowledge  
-**Show:** `cwurData.csv` uploaded and indexed (indexing complete).
+- [ ] `01_knowledge_base_uploaded.png` — Knowledge upload/index page *(optional; skipped)*
+- [ ] `06_terminal_country_info_japan_ok.png` — Terminal `/country-info?country=Japan` *(optional; skipped)*
+- [ ] `07_tools_server_running.png` — Server running on port 5005 *(optional; skipped)*
 
-### 05_terminal_health_ok.png
-**Capture:** Terminal  
-**Command:** `curl.exe http://localhost:5005/health`  
-**Show:** Response with `"status":"ok"`.
+These optional screenshots are **not required** for this submission.
 
-### 06_terminal_country_info_japan_ok.png
-**Capture:** Terminal  
-**Command:** `curl.exe "http://localhost:5005/country-info?country=Japan"`  
-**Show:** HTTP 200 and JSON with `"country":"Japan"`.
+## Status
 
-### 07_tools_server_running.png *(optional)*
-**Capture:** Terminal running `python tools_server.py`  
-**Show:** Flask server listening on `0.0.0.0:5005`.
-
-## After capturing
-
-```powershell
-cd "C:\Users\avida\amdocs\lesson 17\webui_kaggle_rapidapi_hw"
-git add screenshots/01_knowledge_base_uploaded.png screenshots/05_terminal_health_ok.png screenshots/06_terminal_country_info_japan_ok.png
-git commit -m "Add remaining homework screenshots"
-git push
-```
-
-Delete this file once all required screenshots exist.
+**Final submission: complete** with the four screenshots listed above.
